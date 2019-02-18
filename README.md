@@ -7,10 +7,11 @@ To install **GO** v1.11.5, follow <a href="https://golang.org/doc/install" targe
 ### Linux
 ```
 wget -i https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz\
-&& mv go1.11.5.linux-amd64.tar.gz /usr/local\
-&&  tar -xvf go1.11.5.linux-amd64.tar.gz\
+&& sudo mv go1.11.5.linux-amd64.tar.gz /usr/local\
+&& sudo tar -xvf /usr/local/go1.11.5.linux-amd64.tar.gz\
+&& export PATH=/usr/local/go/bin:$PATH [comment]: <> (exporting for current terminal session)
 && sudo echo "export PATH=/usr/local/go/bin:$PATH" >> ~/.bashrc\
-&& mkdir $HOME/go
+&& mkdir -p $HOME/go/src $$ cd $HOME/go/src 
 ```
 
 ### MacOS
