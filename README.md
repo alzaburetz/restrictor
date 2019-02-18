@@ -1,7 +1,7 @@
 # Restrictor
 
 ## Get Golang
-<img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-images-1.medium.com%2Fmax%2F1200%2F1*mUjcwJ7INewkUIVWFJVRUA.jpeg&f=1" width=300>
+<img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fih1.redbubble.net%2Fimage.38303832.2081%2Fraf%2C360x360%2C075%2Ct%2Cfafafa%3Aca443f4786.jpg&f=1" width=300>
 
 To install **GO** v1.11.5, follow <a href="https://golang.org/doc/install" target="_new">this instructions</a> or you can use this bash code:
 ### Linux
