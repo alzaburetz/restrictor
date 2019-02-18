@@ -5,7 +5,7 @@
 
 To install **GO** v1.11.5, follow <a href="https://golang.org/doc/install" target="_new">this instructions</a> or you can use this bash code:
 ### Linux
-```
+```bash
 wget -i https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz\
 && sudo mv go1.11.5.linux-amd64.tar.gz /usr/local\
 && sudo tar -xvf /usr/local/go1.11.5.linux-amd64.tar.gz\
@@ -22,7 +22,7 @@ wget -i https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz\
 
 ### MacOS
 [Homebrew](https://brew.sh/) is required to install from terminal
-```
+```bash
 brew install wget
 ```
 ```
@@ -53,11 +53,11 @@ To test this app, you can edit JSON Mocking-data file:
 ```json
 {
  "app": "name_of_process_from terminal",
- "windows": 1, //not in use
- "rule": //"Close" for restricted "Open" for required,
- "time": //"working" for working days "weekend" otherwise,
- "hourfrom": //minimum hour of a day,
- "hourto": //maximum,
+ "windows": 1,
+ "rule": "Close for restricted Open for required",
+ "time": "working for working days weekend otherwise",
+ "hourfrom": "minimum hour of a day",
+ "hourto": "maximum",
  "executable": "path/to/executable"
 }
 ```
