@@ -53,7 +53,7 @@ To test this app, you can edit JSON Mocking-data file:
 ```
 {
  "app": *name_of_process_from terminal*,
- "windows": 1, [comment]: <> (not-in-use)
+ "windows": 1, [comment]:<>(not-in-use)
  "rule": *"Close" for restricted "Open" for required*,
  "time": *"working" for working days "weekend" otherwise*,
  "hourfrom": *minimum hour of a day*,
