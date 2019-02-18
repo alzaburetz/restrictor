@@ -9,7 +9,7 @@ To install **GO** v1.11.5, follow <a href="https://golang.org/doc/install" targe
 wget -i https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz\
 && sudo mv go1.11.5.linux-amd64.tar.gz /usr/local\
 && sudo tar -xvf /usr/local/go1.11.5.linux-amd64.tar.gz\
-&& export PATH=/usr/local/go/bin:$PATH [comment]: <> (exporting for current terminal session)
+&& export PATH=/usr/local/go/bin:$PATH 
 && sudo echo "export PATH=/usr/local/go/bin:$PATH" >> ~/.bashrc\
 && mkdir -p $HOME/go/src $$ cd $HOME/go/src\
 && echo "package main
@@ -47,5 +47,18 @@ Get [this file](https://dl.google.com/go/go1.11.5.windows-amd64.msi) and double-
 This is basic applcation, that runs silently, without any notifications and/or signals
 Made easily with [this package](https://github.com/shirou/gopsutil)
 ```
-go get -u https://github.com/shirou/gopsutil
+go get -u https://github.com/shirou/gopsutil/...
 ```
+To test this app, you can edit JSON Mocking-data file:
+```
+{
+ "app": *name_of_process_from terminal*,
+ "windows": 1, [comment]: <> (not-in-use)
+ "rule": *"Close" for restricted "Open" for required*,
+ "time": *"working" for working days "weekend" otherwise*,
+ "hourfrom": *minimum hour of a day*,
+ "hourto": *maximum*,
+ "executable": *path/to/executable*
+}
+```
+
