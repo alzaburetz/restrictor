@@ -11,7 +11,13 @@ wget -i https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz\
 && sudo tar -xvf /usr/local/go1.11.5.linux-amd64.tar.gz\
 && export PATH=/usr/local/go/bin:$PATH [comment]: <> (exporting for current terminal session)
 && sudo echo "export PATH=/usr/local/go/bin:$PATH" >> ~/.bashrc\
-&& mkdir -p $HOME/go/src $$ cd $HOME/go/src 
+&& mkdir -p $HOME/go/src $$ cd $HOME/go/src\
+&& echo "package main
+ import \"fmt\"
+ func main() {
+ fmt.Println(\"Hello world\")
+ }" > test.go \
+&& go run test.go
 ```
 
 ### MacOS
