@@ -25,7 +25,7 @@ wget -i https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz\
 ```bash
 brew install wget
 ```
-```
+```bash
 wget -i https://dl.google.com/go/go1.11.5.darwin-amd64.pkg
 sudo installer -pkg go1.11.5.darwin-amd64.pkg -target /usr/local/go
 ```
@@ -46,7 +46,7 @@ Get [this file](https://dl.google.com/go/go1.11.5.windows-amd64.msi) and double-
 ### Pre-pre-pre alpha stage
 This is basic applcation, that runs silently, without any notifications and/or signals
 Made easily with [this package](https://github.com/shirou/gopsutil)
-```
+```bash
 go get -u https://github.com/shirou/gopsutil/...
 ```
 To test this app, you can edit JSON Mocking-data file:
