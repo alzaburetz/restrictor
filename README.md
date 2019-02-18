@@ -50,15 +50,15 @@ Made easily with [this package](https://github.com/shirou/gopsutil)
 go get -u https://github.com/shirou/gopsutil/...
 ```
 To test this app, you can edit JSON Mocking-data file:
-```
+```json
 {
- "app": *name_of_process_from terminal*,
- "windows": 1, [comment]:<>(not-in-use)
- "rule": *"Close" for restricted "Open" for required*,
- "time": *"working" for working days "weekend" otherwise*,
- "hourfrom": *minimum hour of a day*,
- "hourto": *maximum*,
- "executable": *path/to/executable*
+ "app": "name_of_process_from terminal",
+ "windows": 1, //not in use
+ "rule": //"Close" for restricted "Open" for required,
+ "time": //"working" for working days "weekend" otherwise,
+ "hourfrom": //minimum hour of a day,
+ "hourto": //maximum,
+ "executable": "path/to/executable"
 }
 ```
 
