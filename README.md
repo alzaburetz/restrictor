@@ -13,8 +13,8 @@ wget -i https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz\
 && mkdir $HOME/go
 ```
 
-- MacOS
-##### [Homebrew](https://brew.sh/) is required to install from terminal
+### MacOS
+[Homebrew](https://brew.sh/) is required to install from terminal
 ```
 brew install wget
 ```
@@ -22,9 +22,13 @@ brew install wget
 wget -i https://dl.google.com/go/go1.11.5.darwin-amd64.pkg
 sudo installer -pkg go1.11.5.darwin-amd64.pkg -target /usr/local/go
 ```
-##### Or get [this file](https://dl.google.com/go/go1.11.5.darwin-amd64.pkg) and double-click it
-- Windows
-##### Get [this file](https://dl.google.com/go/go1.11.5.windows-amd64.msi) and double-click it
+Or get [this file](https://dl.google.com/go/go1.11.5.darwin-amd64.pkg) and double-click it
+
+
+### Windows
+Get [this file](https://dl.google.com/go/go1.11.5.windows-amd64.msi) and double-click it
+
+
 
 ## Check-list:
 - [x] Agent closes/opens restricted apps according to data
