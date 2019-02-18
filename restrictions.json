@@ -1,0 +1,58 @@
+{
+  "restrictions": [
+    {
+      "app": "chrome",
+      "windows": 1,
+      "rule": "Open",
+      "time": "working",
+      "hourfrom": 12,
+      "hourto": 23,
+      "executable": "google-chrome"
+    },
+    {
+      "app": "Telegram",
+      "windows": 1,
+      "rule": "Open",
+      "time": "working",
+      "hourfrom": 12,
+      "hourto": 24,
+      "executable": "/usr/local/Telegram/Telegram"
+    },
+    {
+      "app": "atom",
+      "windows": 1,
+      "rule": "Close",
+      "time": "working",
+      "hourfrom": 12,
+      "hourto": 24,
+      "executable": "atom"
+    },
+    {
+      "app": "Discord",
+      "windows": 1,
+      "rule": "Open",
+      "time": "working",
+      "hourfrom": 12,
+      "hourto": 24,
+      "executable": "discord"
+    },
+    {
+      "app": "code",
+      "windows": 1,
+      "rule": "Close",
+      "time": "working",
+      "hourfrom": 12,
+      "hourto": 24,
+      "executable": "code"
+    },
+    {
+      "app": "gedit",
+      "windows": 1,
+      "rule": "Close",
+      "time": "working",
+      "hourfrom": 12,
+      "hourto": 24,
+      "executable": "gedit"
+    }
+  ]
+}
