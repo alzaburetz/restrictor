@@ -3,10 +3,10 @@
     {
       "app": "chrome",
       "windows": 1,
-      "rule": "Open",
+      "rule": "Close",
       "time": "working",
       "hourfrom": 12,
-      "hourto": 23,
+      "hourto": 21,
       "executable": "google-chrome"
     },
     {

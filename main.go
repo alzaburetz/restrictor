@@ -3,8 +3,10 @@ package main
 import (
 	"encoding/json"
 	"github.com/shirou/gopsutil/process"
+	"io"
 	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
 	"regexp"
 	"time"
@@ -12,14 +14,6 @@ import (
 
 var working = []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"}
 var weekend = []string{"Saturday", "Sunday"}
-
-func handleError(err error) {
-	if err != nil {
-		log.Fatalf("%+v", err.Error())
-	} else {
-		log.Println("SUCCESS")
-	}
-}
 
 func TheDay(days []string, day string) bool {
 	result := false
@@ -77,6 +71,8 @@ func Openable(res *Restriction, nm []*process.Process) error {
 	if i == len(nm) && res.Rule == "Open" {
 		if TheDay(weekend, time.Now().Weekday().String()) && res.Time == "weekend" || TheDay(working, time.Now().Weekday().String()) && res.Time == "working" {
 			go exec.Command(res.Exec).Run()
+			cmd, _ := nm[i-1].Status()
+			go log.Printf("Process %s status: %s\n", res.App, cmd)
 
 		}
 	}
@@ -85,11 +81,12 @@ func Openable(res *Restriction, nm []*process.Process) error {
 
 }
 
+
 func main() {
-	//var logg string
-	//var lo, _ = os.Create("logs/log "+time.Now().String()+".txt")
-	//defer lo.Close()
-	//w := bufio.NewWriter(lo)
+	var lo, _ = os.Create("log "+time.Now().String()+".log")
+	defer lo.Close()
+	w := io.Writer(lo)
+	log.SetOutput(w)
 	for {
 		procs, _ := process.Processes()
 		byteVal, _ := ioutil.ReadFile("restrictions.json")
