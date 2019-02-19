@@ -14,8 +14,8 @@
       "windows": 1,
       "rule": "Open",
       "time": "working",
-      "hourfrom": 12,
-      "hourto": 24,
+      "hourfrom": 0,
+      "hourto": 25,
       "executable": "/usr/local/Telegram/Telegram"
     },
     {
@@ -23,8 +23,8 @@
       "windows": 1,
       "rule": "Close",
       "time": "working",
-      "hourfrom": 12,
-      "hourto": 24,
+      "hourfrom": -1,
+      "hourto": 25,
       "executable": "atom"
     },
     {
@@ -32,8 +32,8 @@
       "windows": 1,
       "rule": "Open",
       "time": "working",
-      "hourfrom": 12,
-      "hourto": 24,
+      "hourfrom": -1,
+      "hourto": 25,
       "executable": "discord"
     },
     {

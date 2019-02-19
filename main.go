@@ -83,7 +83,11 @@ func Openable(res *Restriction, nm []*process.Process) error {
 
 
 func main() {
-	var lo, _ = os.Create("log "+time.Now().String()+".log")
+	_ , err := os.Stat("logs")
+	if os.IsNotExist(err) {
+		os.Mkdir("logs",0777)
+	}
+	var lo, _ = os.Create("logs/log "+time.Now().String()+".log")
 	defer lo.Close()
 	w := io.Writer(lo)
 	log.SetOutput(w)
