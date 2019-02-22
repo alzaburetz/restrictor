@@ -2,10 +2,14 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
+	"github.com/alzaburetz/myrestAPI/models"
+	_ "github.com/alzaburetz/myrestAPI/models"
 	"github.com/shirou/gopsutil/process"
 	"io"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 	"os/exec"
 	"regexp"
@@ -26,14 +30,17 @@ func TheDay(days []string, day string) bool {
 	return result
 }
 
-func Closable(res *Restriction, nm []*process.Process) error {
+func Closable(res *models.Restriction, nm []*process.Process) error {
 	result := false
 	var err error
 	var i int
 	for i = 0; i < len(nm); i++ {
-		name, _ := nm[i].Name()
-		matched, _ := regexp.Match(name, []byte(res.App))
+		name, _ := nm[i].Cmdline()
+		matched, _ := regexp.Match(res.App,[]byte(name))
+
 		if matched && res.Rule == "Close" {
+			fmt.Printf("%s == %s = %v\n",name, res.App, matched)
+			fmt.Println("app is closable")
 			if TheDay(working, time.Now().Weekday().String()) && res.Time == "working" {
 				result = true
 				break
@@ -57,13 +64,14 @@ func Closable(res *Restriction, nm []*process.Process) error {
 	return err
 }
 
-func Openable(res *Restriction, nm []*process.Process) error {
+func Openable(res *models.Restriction, nm []*process.Process) error {
 	var i int
 	var err error
 	var name string
 	for i = 0; i < len(nm); i++ {
 		name, err = nm[i].Name()
-		if res.App == name {
+		matched, _ := regexp.Match(res.App, []byte(name))
+		if matched {
 			break
 		}
 	}
@@ -93,23 +101,26 @@ func main() {
 	log.SetOutput(w)
 	for {
 		procs, _ := process.Processes()
-		byteVal, _ := ioutil.ReadFile("restrictions.json")
-		var r Restrict
-		json.Unmarshal(byteVal, &r)
+		request, _ := http.Get("http://localhost:3000/")
 
-		for j := 0; j < len(r.Restrictions); j++ {
-			if time.Now().Hour() > r.Restrictions[j].Hourfrom && time.Now().Hour() < r.Restrictions[j].Hourto {
-				err := Closable(&r.Restrictions[j], procs)
+		byteVal, _ := ioutil.ReadAll(request.Body)
+		var r models.Restrictions
+		json.Unmarshal(byteVal, &r)
+		//fmt.Printf("%v",r)
+		for i := 0; i < len(r.Restrict); i++ {
+			if time.Now().Hour() > r.Restrict[i].HF && time.Now().Hour() < r.Restrict[i].HT {
+				err := Closable(&r.Restrict[i], procs)
 				if err != nil {
 					log.Printf("Error closing restricted app: %+v", err)
 					break
 				}
-				err = Openable(&r.Restrictions[j], procs)
+				err = Openable(&r.Restrict[i], procs)
 				if err != nil {
 					log.Printf("Error opening restricted app: %+v", err)
 					break
 				}
 			}
+
 		}
 
 		time.Sleep(time.Second)

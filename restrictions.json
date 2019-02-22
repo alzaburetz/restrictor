@@ -3,7 +3,7 @@
     {
       "app": "chrome",
       "windows": 1,
-      "rule": "Close",
+      "rule": "Open",
       "time": "working",
       "hourfrom": 12,
       "hourto": 21,

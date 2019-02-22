@@ -39,8 +39,8 @@ Get [this file](https://dl.google.com/go/go1.11.5.windows-amd64.msi) and double-
 
 ## Check-list:
 - [x] Agent closes/opens restricted apps according to data
-- [ ] API
-- [ ] Database intagration
+- [x] API
+- [x] Database intagration
 - [ ] Admin pannel
 
 ### Pre-pre-pre alpha stage
@@ -61,4 +61,7 @@ To test this app, you can edit JSON Mocking-data file:
  "executable": "path/to/executable"
 }
 ```
+
+### API test
+Go to [API repository](https://github.com/alzaburetz/restrictor-api.git)
 
