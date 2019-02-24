@@ -3,7 +3,7 @@
 ## Get Golang
 <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fih1.redbubble.net%2Fimage.38303832.2081%2Fraf%2C360x360%2C075%2Ct%2Cfafafa%3Aca443f4786.jpg&f=1" width=300>
 
-To install **GO** v1.11.5, follow <a href="https://golang.org/doc/install" target="_new">this instructions</a> or you can use this bash code:
+To install **GO** v1.11.5, follow <a href="https://golang.org/doc/install" target="_blank">this instructions</a> or you can use this bash code:
 ### Linux
 ```bash
 wget -i https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz\
@@ -39,7 +39,7 @@ Get [this file](https://dl.google.com/go/go1.11.5.windows-amd64.msi) and double-
 
 ## Check-list:
 - [x] Agent closes/opens restricted apps according to data
-- [x] API
+- [x] [API](https://github.com/alzaburetz/restrictor-api.git)
 - [x] Database intagration
 - [ ] Admin pannel
 
