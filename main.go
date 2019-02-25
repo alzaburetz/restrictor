@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/alzaburetz/myrestAPI/models"
 	_ "github.com/alzaburetz/myrestAPI/models"
 	"github.com/shirou/gopsutil/process"
@@ -39,8 +38,6 @@ func Closable(res *models.Restriction, nm []*process.Process) error {
 		matched, _ := regexp.Match(res.App,[]byte(name))
 
 		if matched && res.Rule == "Close" {
-			fmt.Printf("%s == %s = %v\n",name, res.App, matched)
-			fmt.Println("app is closable")
 			if TheDay(working, time.Now().Weekday().String()) && res.Time == "working" {
 				result = true
 				break
@@ -56,9 +53,10 @@ func Closable(res *models.Restriction, nm []*process.Process) error {
 		err = nm[i].Kill()
 		if err != nil {
 			return err
-		} else {
-			log.Println("Successfully killed " + res.App)
 		}
+
+		log.Println("Successfully killed " + res.App)
+
 
 	}
 	return err
@@ -101,22 +99,21 @@ func main() {
 	log.SetOutput(w)
 	for {
 		procs, _ := process.Processes()
-		request, _ := http.Get("http://localhost:3000/")
+		request, _ := http.Get("http://localhost:3000/restrictions")
 
 		byteVal, _ := ioutil.ReadAll(request.Body)
-		var r models.Restrictions
+		var r []models.Restriction
 		json.Unmarshal(byteVal, &r)
-		//fmt.Printf("%v",r)
-		for i := 0; i < len(r.Restrict); i++ {
-			if time.Now().Hour() > r.Restrict[i].HF && time.Now().Hour() < r.Restrict[i].HT {
-				err := Closable(&r.Restrict[i], procs)
+		for i := 0; i < len(r); i++ {
+			if time.Now().Hour() > r[i].HF && time.Now().Hour() < r[i].HT {
+				err := Closable(&r[i], procs)
 				if err != nil {
-					log.Printf("Error closing restricted app: %+v", err)
+					log.Printf("Error closing ed app: %+v", err)
 					break
 				}
-				err = Openable(&r.Restrict[i], procs)
+				err = Openable(&r[i], procs)
 				if err != nil {
-					log.Printf("Error opening restricted app: %+v", err)
+					log.Printf("Error opening ed app: %+v", err)
 					break
 				}
 			}
@@ -126,18 +123,4 @@ func main() {
 		time.Sleep(time.Second)
 	}
 
-}
-
-type Restrict struct {
-	Restrictions []Restriction `json:"restrictions"`
-}
-
-type Restriction struct {
-	App      string `json:"app"`
-	Windows  int    `json:"windows"`
-	Rule     string `json:"rule"`
-	Time     string `json:"time"`
-	Hourfrom int    `json:"hourfrom"`
-	Hourto   int    `json:"hourto"`
-	Exec     string `json:"executable"`
 }
