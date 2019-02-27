@@ -10,7 +10,7 @@ wget -i https://dl.google.com/go/go1.12.linux-amd64.tar.gz\
 && sudo mv go1.12.linux-amd64.tar.gz /usr/local\
 && sudo tar -xvf /usr/local/go1.12.linux-amd64.tar.gz\
 && sudo rm /usr/local/go1.12.linux-amd64.tar.gz\
-&& export PATH=/usr/local/go/bin:$PATH 
+&& export PATH=/usr/local/go/bin:$PATH\ 
 && sudo echo "export PATH=/usr/local/go/bin:$PATH" >> ~/.bashrc\
 && mkdir -p $HOME/go/src/test $$ cd $HOME/go/src/test\
 && echo "package main
