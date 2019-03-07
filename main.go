@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"github.com/alzaburetz/myrestAPI/models"
-	_ "github.com/alzaburetz/myrestAPI/models"
+	"github.com/shirou/gopsutil/host"
 	"github.com/shirou/gopsutil/process"
 	"io"
 	"io/ioutil"
@@ -97,27 +97,47 @@ func main() {
 	defer lo.Close()
 	w := io.Writer(lo)
 	log.SetOutput(w)
+	hosts, _ := host.Users()
+	host := hosts[0].User
+	log.Println(host)
 	for {
 		procs, _ := process.Processes()
-		request, _ := http.Get("http://localhost:3000/restrictions")
+		request, err := http.Get("http://localhost:3000/restrictions/" + host)
+		if err != nil || request == nil{
+			log.Printf("Error reading from host %v\n",err)
+		} else {
 
-		byteVal, _ := ioutil.ReadAll(request.Body)
-		var r []models.Restriction
-		json.Unmarshal(byteVal, &r)
-		for i := 0; i < len(r); i++ {
-			if time.Now().Hour() > r[i].HF && time.Now().Hour() < r[i].HT {
-				err := Closable(&r[i], procs)
+			defer func() {
+				err := request.Body.Close()
 				if err != nil {
-					log.Printf("Error closing ed app: %+v", err)
-					break
+					log.Println("Error closing request")
 				}
-				err = Openable(&r[i], procs)
-				if err != nil {
-					log.Printf("Error opening ed app: %+v", err)
-					break
-				}
+			}()
+			byteVal, err := ioutil.ReadAll(request.Body)
+			if err != nil {
+				log.Printf("Error reading response from host %v\n", err)
 			}
+			log.Println(string(byteVal))
+			var r []models.Restriction
+			err = json.Unmarshal(byteVal, &r)
+			if err != nil {
+				log.Println("Error marshaling response")
+			}
+			for i := 0; i < len(r); i++ {
+				if time.Now().Hour() > r[i].HF && time.Now().Hour() < r[i].HT {
+					err := Closable(&r[i], procs)
+					if err != nil {
+						log.Printf("Error closing ed app: %+v", err)
+						break
+					}
+					err = Openable(&r[i], procs)
+					if err != nil {
+						log.Printf("Error opening ed app: %+v", err)
+						break
+					}
+				}
 
+			}
 		}
 
 		time.Sleep(time.Second)

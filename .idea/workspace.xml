@@ -16,43 +16,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="105" column="35" selection-start-line="105" selection-start-column="35" selection-end-line="105" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/log 2019-02-22 23:49:51.992073756 +0300 MSK m=+0.007974010.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/log 2019-02-22 23:59:32.46080019 +0300 MSK m=+0.007259436.log">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="975">
-                <caret line="65" column="72" selection-start-line="65" selection-start-column="72" selection-end-line="65" selection-end-column="72" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/restrictions.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="30">
+              <caret line="100" column="21" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+              <folding>
+                <element signature="e#14#238#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,7 +127,7 @@
     <frame x="-1" y="0" width="1368" height="729" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1590909" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16136363" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -184,10 +152,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.txt" />
-    <entry file="file://$PROJECT_DIR$/log.txt" />
-    <entry file="file://$PROJECT_DIR$/log 2019-02-17 03:52:57.098629218 +0300 MSK m=+0.001019300.txt" />
-    <entry file="file://$PROJECT_DIR$/log2019-02-17 03:51:14.83577855 +0300 MSK m=+0.001023500.txt" />
     <entry file="file://$PROJECT_DIR$/log 2019-02-17 03:59:57.336284646 +0300 MSK m=+0.001078043.txt" />
     <entry file="file://$PROJECT_DIR$/log 2019-02-17 04:16:16.22453824 +0300 MSK m=+0.000995881.txt" />
     <entry file="file://$PROJECT_DIR$/log 2019-02-17 04:25:28.643308605 +0300 MSK m=+0.001117953.txt" />
@@ -203,13 +167,6 @@
     <entry file="file://$PROJECT_DIR$/log 2019-02-20 00:11:15.665764539 +0300 MSK m=+0.001134788.log" />
     <entry file="file://$PROJECT_DIR$/log 2019-02-19 22:58:59.7185071 +0300 MSK m=+0.001007399.log" />
     <entry file="file://$PROJECT_DIR$/logs/log 2019-02-20 00:16:06.293879686 +0300 MSK m=+0.000928110.log" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/log 2019-02-22 16:00:51.125714492 +0300 MSK m=+0.006143038.log" />
     <entry file="file://$PROJECT_DIR$/logs/log 2019-02-22 16:10:19.918279174 +0300 MSK m=+0.004799612.log" />
     <entry file="file://$PROJECT_DIR$/logs/log 2019-02-22 16:20:50.77937246 +0300 MSK m=+0.005403866.log" />
@@ -221,10 +178,10 @@
     <entry file="file://$PROJECT_DIR$/logs/log 2019-02-22 17:16:52.068477844 +0300 MSK m=+0.009191823.log" />
     <entry file="file://$PROJECT_DIR$/logs/log 2019-02-22 18:05:21.453887812 +0300 MSK m=+0.009239341.log" />
     <entry file="file://$PROJECT_DIR$/logs/log 2019-02-22 18:07:53.893187517 +0300 MSK m=+0.006630284.log" />
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="105" column="35" selection-start-line="105" selection-start-column="35" selection-end-line="105" selection-end-column="35" />
+        <state relative-caret-position="15">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -238,20 +195,91 @@
     <entry file="file://$PROJECT_DIR$/logs/log 2019-02-22 23:59:32.46080019 +0300 MSK m=+0.007259436.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/restrictions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="975">
-            <caret line="65" column="72" selection-start-line="65" selection-start-column="72" selection-end-line="65" selection-end-column="72" />
+          <first_editor relative-caret-position="251">
+            <caret line="67" selection-start-line="67" selection-end-line="67" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restrictions.json">
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 12:56:57.999129174 +0300 MSK m=+0.009575121.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:00:01.148218222 +0300 MSK m=+0.007260029.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:02:22.535367687 +0300 MSK m=+0.025150190.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:06:10.941725736 +0300 MSK m=+0.012909870.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:08:20.981784988 +0300 MSK m=+0.005739080.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:10:03.578015153 +0300 MSK m=+0.006871905.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:10:35.956502994 +0300 MSK m=+0.004969976.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:18:46.058886397 +0300 MSK m=+0.007901152.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:21:16.181908258 +0300 MSK m=+0.008205161.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:21:51.343176876 +0300 MSK m=+0.006909895.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:22:21.147738489 +0300 MSK m=+0.009213709.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:23:28.382495479 +0300 MSK m=+0.009512710.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:23:53.672186149 +0300 MSK m=+0.011550920.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:25:05.769875347 +0300 MSK m=+0.007339954.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="-99" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:25:48.965029738 +0300 MSK m=+0.007644341.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:31:08.818574811 +0300 MSK m=+0.009607669.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:31:45.891833817 +0300 MSK m=+0.004492365.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:34:14.405457424 +0300 MSK m=+0.020447790.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log 2019-03-07 13:34:35.400781882 +0300 MSK m=+0.009423653.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15698" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="100" column="21" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+          <folding>
+            <element signature="e#14#238#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
