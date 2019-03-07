@@ -35,7 +35,7 @@ func Closable(res *models.Restriction, nm []*process.Process) error {
 	var i int
 	for i = 0; i < len(nm); i++ {
 		name, _ := nm[i].Cmdline()
-		matched, _ := regexp.Match(res.App,[]byte(name))
+		matched, _ := regexp.Match(res.App, []byte(name))
 
 		if matched && res.Rule == "Close" {
 			if TheDay(working, time.Now().Weekday().String()) && res.Time == "working" {
@@ -57,7 +57,6 @@ func Closable(res *models.Restriction, nm []*process.Process) error {
 
 		log.Println("Successfully killed " + res.App)
 
-
 	}
 	return err
 }
@@ -68,7 +67,7 @@ func Openable(res *models.Restriction, nm []*process.Process) error {
 	var name string
 	for i = 0; i < len(nm); i++ {
 		name, err = nm[i].Name()
-		matched, _ := regexp.Match(res.App, []byte(name))
+		matched, _ := regexp.Match(name, []byte(res.Exec))
 		if matched {
 			break
 		}
@@ -76,8 +75,14 @@ func Openable(res *models.Restriction, nm []*process.Process) error {
 
 	if i == len(nm) && res.Rule == "Open" {
 		if TheDay(weekend, time.Now().Weekday().String()) && res.Time == "weekend" || TheDay(working, time.Now().Weekday().String()) && res.Time == "working" {
-			go exec.Command(res.Exec).Run()
+
 			cmd, _ := nm[i-1].Status()
+			go func() {
+				err = exec.Command(res.Exec).Run()
+				if err != nil {
+					log.Println(err)
+				}
+			}()
 			go log.Printf("Process %s status: %s\n", res.App, cmd)
 
 		}
@@ -87,13 +92,12 @@ func Openable(res *models.Restriction, nm []*process.Process) error {
 
 }
 
-
 func main() {
-	_ , err := os.Stat("logs")
+	_, err := os.Stat("logs")
 	if os.IsNotExist(err) {
-		os.Mkdir("logs",0777)
+		os.Mkdir("logs", 0777)
 	}
-	var lo, _ = os.Create("logs/log "+time.Now().String()+".log")
+	var lo, _ = os.Create("logs/log " + time.Now().String() + ".log")
 	defer lo.Close()
 	w := io.Writer(lo)
 	log.SetOutput(w)
@@ -102,9 +106,9 @@ func main() {
 	log.Println(host)
 	for {
 		procs, _ := process.Processes()
-		request, err := http.Get("http://localhost:3000/restrictions/" + host)
-		if err != nil || request == nil{
-			log.Printf("Error reading from host %v\n",err)
+		request, err := http.Get("http://localhost:3000/restrictions/user/" + host)
+		if err != nil || request == nil {
+			log.Printf("Error reading from host %v\n", err)
 		} else {
 
 			defer func() {
@@ -117,7 +121,6 @@ func main() {
 			if err != nil {
 				log.Printf("Error reading response from host %v\n", err)
 			}
-			log.Println(string(byteVal))
 			var r []models.Restriction
 			err = json.Unmarshal(byteVal, &r)
 			if err != nil {
